@@ -19,9 +19,9 @@ if [[ -n $(ip addr | grep '172.2[96]\|2001') ]]; then
 		echo '---' >> $links_DIR/README.md
 		date >> $links_DIR/README.md
 
-		git -C $links_DIR reset HEAD^
-		git -C $links_DIR add *
+		#git -C $links_DIR reset HEAD^
+		git -C $links_DIR add .
 		git -C $links_DIR commit -m 'index'
 	fi
 fi
-git -C $links_DIR push -f
+git -C $links_DIR push master -f
