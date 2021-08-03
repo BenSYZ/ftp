@@ -1,5 +1,5 @@
 My local ip address at school
-* 172.26.87.184/20
+* 172.26.92.83/20
 
 ---
-Wed Aug  4 12:04:17 AM CST 2021
+Wed Aug  4 04:00:01 AM CST 2021
