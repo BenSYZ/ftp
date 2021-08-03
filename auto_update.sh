@@ -1,5 +1,5 @@
 #!/bin/bash
-links_DIR='/home/ben/GitRepos/links'
+#links_DIR='/home/ben/GitRepos/links'
 links_DIR="$(dirname $0)"
 echo $links_DIR
 
