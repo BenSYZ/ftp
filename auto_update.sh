@@ -24,4 +24,4 @@ if [[ -n $(ip addr | grep '172.2[96]\|2001') ]]; then
 		git -C $links_DIR commit -m 'index'
 	fi
 fi
-git -C $links_DIR push master -f
+git -C $links_DIR push origin master -f
