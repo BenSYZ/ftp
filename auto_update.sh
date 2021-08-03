@@ -1,10 +1,10 @@
 #!/bin/bash
 #links_DIR='/home/ben/GitRepos/links'
 links_DIR="$(dirname $0)"
-echo $links_DIR
+#echo $links_DIR
 
 if [[ -n $(ip addr | grep '172.2[96]\|2001') ]]; then
-	if [[ -n $(diff <(head -2 $links_DIR/index.md) <(ip addr | grep '172.29\|2001' |awk '{print "* " $2}')) ]]; then
+	if [[ -n $(diff <(head -1 $links_DIR/index.md) <(ip addr | grep '172.2[96]\|2001' |awk '{print "* " $2}')) ]]; then
 
 		ip addr | grep '172.2[96]\|2001' |awk '{print "* " $2}' > $links_DIR/index.md
 		echo >> $links_DIR/index.md
@@ -21,7 +21,9 @@ if [[ -n $(ip addr | grep '172.2[96]\|2001') ]]; then
 
 		#git -C $links_DIR reset HEAD^
 		git -C $links_DIR add .
-		git -C $links_DIR commit -m 'index'
+		git -C $links_DIR commit -m "$(date)"
+
+
+		git -C $links_DIR push origin master -f
 	fi
 fi
-git -C $links_DIR push origin master -f
